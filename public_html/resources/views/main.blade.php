@@ -23,8 +23,8 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h1>Добавить продукт!</h1>
-            <a href="{{ route('product.index') }}" class="btn btn-outline-primary">Добавить продукт</a>
+            <h1>Список продуктов!</h1>
+            <a href="{{ route('product.index') }}" class="btn btn-outline-primary">Список продуктов</a>
         </div>
     </div>
 </div>
