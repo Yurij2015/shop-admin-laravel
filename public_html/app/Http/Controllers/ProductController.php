@@ -31,7 +31,7 @@ class ProductController extends Controller
             $image_name = date('dmy_H_s_i');
             $ext = strtolower($image->getClientOriginalExtension());
             $image_full_name = $image_name . "." . $ext;
-            $upload_path = 'public/media/';
+            $upload_path = 'product/media/';
             $image_url = $upload_path . $image_full_name;
             $success = $image->move($upload_path, $image_full_name);
             $data['logo'] = $image_url;
