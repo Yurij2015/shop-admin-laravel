@@ -33,7 +33,9 @@
                         <td>
                             <a href="" class="btn btn-info btn-sm">Показать</a>
                             <a href="{{ URL::to('edit/product/' . $product->id) }}" class="btn btn-primary btn-sm">Редактировать</a>
-                            <a href="" class="btn btn-danger btn-sm">Удалить</a>
+                            <a href="{{ URL::to('delete/product/' . $product->id) }}"
+                               onclick="return confirm('Вы уверены, что хотите удалить запись?')"
+                               class="btn btn-danger btn-sm">Удалить</a>
                         </td>
                     </tr>
                 @endforeach
