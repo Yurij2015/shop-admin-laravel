@@ -28,9 +28,11 @@
                     <tr>
                         <td>{{ $product->product_name }}</td>
                         <td>{{ $product->product_code }}</td>
-                        <td>{{ $product->detail }}</td>
-                        <td><img width="200" src="{{ URL::to( $product->logo)}}" alt=""></td>
                         <td>
+                            {{ str_limit($product->detail, $limit = 100) }}
+                        </td>
+                        <td><img width="150" src="{{ URL::to( $product->logo)}}" alt=""></td>
+                        <td class="col-md-3">
                             <a href="{{ URL::to('show/product/' . $product->id) }}"
                                class="btn btn-info btn-sm">Показать</a>
                             <a href="{{ URL::to('edit/product/' . $product->id) }}" class="btn btn-primary btn-sm">Редактировать</a>
