@@ -30,6 +30,7 @@ Route::get('delete/product/{id}', 'ProductController@Delete');
 
 Route::post('update/product/{id}', 'ProductController@Update');
 
+Route::get('show/product/{id}', 'ProductController@Show');
 
 Auth::routes();
 

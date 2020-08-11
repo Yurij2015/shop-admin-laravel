@@ -31,7 +31,8 @@
                         <td>{{ $product->detail }}</td>
                         <td><img width="200" src="{{ URL::to( $product->logo)}}" alt=""></td>
                         <td>
-                            <a href="" class="btn btn-info btn-sm">Показать</a>
+                            <a href="{{ URL::to('show/product/' . $product->id) }}"
+                               class="btn btn-info btn-sm">Показать</a>
                             <a href="{{ URL::to('edit/product/' . $product->id) }}" class="btn btn-primary btn-sm">Редактировать</a>
                             <a href="{{ URL::to('delete/product/' . $product->id) }}"
                                onclick="return confirm('Вы уверены, что хотите удалить запись?')"
@@ -39,9 +40,8 @@
                         </td>
                     </tr>
                 @endforeach
-
             </table>
         </div>
     </div>
-
+    {!! $products->links() !!}
 @endsection

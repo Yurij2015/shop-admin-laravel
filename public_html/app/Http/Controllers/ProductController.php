@@ -10,7 +10,8 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $products = Product::all();
+//        $products = Product::all();
+        $products = DB::table('products')->latest()->paginate(3);
         return view('product.index', compact('products'));
     }
 
@@ -80,5 +81,11 @@ class ProductController extends Controller
         unlink($image);
         $product = DB::table('products')->where('id', $id)->delete();
         return redirect()->route('product.index')->with('success', "Запись успешно удалена");
+    }
+
+    public function Show($id)
+    {
+        $data = DB::table('products')->where('id', $id)->first();
+        return view('product.show', compact('data'));
     }
 }
